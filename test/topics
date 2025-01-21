@@ -1,0 +1,22 @@
+
+
+
+Advanced Stack and Queue Applications:
+Balancing symbols (like brackets in expressions).
+Converting infix to postfix expressions.
+Implementing circular queues.
+Linked Lists:
+Singly Linked List (basic operations like insert, delete, and traversal).
+Doubly Linked List.
+Recursion:
+Basics and examples like factorial, Fibonacci, and reverse a string.
+Sorting Algorithms:
+Bubble Sort, Insertion Sort, Quick Sort, Merge Sort, etc.
+Searching Algorithms:
+Binary Search, Linear Search.
+Trees:
+Binary Trees and their traversals (Inorder, Preorder, Postorder).
+Binary Search Trees (BSTs).
+Graphs:
+Representations (Adjacency List/Matrix).
+BFS and DFS traversal.
