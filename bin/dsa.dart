@@ -1,13 +1,16 @@
-import 'dart:developer';
+
 import 'dart:isolate';
+import 'package:dsa/examples/general_tree_example.dart';
 import 'package:dsa/stack.dart' as dsa;
-import 'package:dsa/trees/general_tree.dart';
+
+
+
 
 void main(List<String> arguments) {
   // print('Hello world: ${dsa.isPalindrome("xjbcx bxbcx")}!');
   // print(findinMultiLstValue(0));
   //createIsolate();
-  generalTrexxExample();
+  generalTreeExample2();
 }
 
 List<int> _numbers = [2, -6, 89, 8, 9, 5];
@@ -94,31 +97,5 @@ void heavyComputationTask(SendPort mySendPort) async {
  }
 }
 
-generalTrexxExample(){
-  GeneralTree<String> tree = GeneralTree<String>();
-  // Set the root of the tree
-  tree.setRoot("CEO");
 
-  // Add children to the root
-  TreeNode<String> root = tree.root!;
-  tree.addChild(root, "VP1");
-  tree.addChild(root, "VP2");
-
-  // Add children to VP1
-  TreeNode<String> vp1 = root.children[0];
-  tree.addChild(vp1, "Manager1");
-  tree.addChild(vp1, "Manager2");
-
-  // Add children to VP2
-  TreeNode<String> vp2 = root.children[1];
-  tree.addChild(vp2, "Manager3");
-
-   // Add more children to Manager1
-  TreeNode<String> manager1 = vp1.children[0];
-  tree.addChild(manager1, "Team Lead 1");
-
-  // Print the tree structure
-  print("Tree Structure:");
-  tree.printTree(tree.root);
-}
 
