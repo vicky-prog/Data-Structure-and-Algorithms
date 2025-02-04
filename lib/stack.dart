@@ -7,7 +7,7 @@ bool isPalindrome(String str) {
   return str == reversed;
 }
 
-// Stack and Queue
+// Stack 
 
 class Stack<T> {
    List<T> _stack = [];
