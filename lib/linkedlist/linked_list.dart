@@ -21,18 +21,12 @@
 // Node Class
 //  Each Nodes store the data and reference for next node
 
-
-
 // class Node<E extends LinkedListEntry<E>> {
 //   T? data; // Data stored in the node
 //   Node<T>? next; // Pointing to the next node
 
 //   Node(this.data);
 // }
-
-
-
-
 
 // class LinkedList<T> {
 //   Node<T>? head; // Points the first node of the list
@@ -66,6 +60,8 @@ class Node<E> {
 class LinkedList<E> {
   Node<E>? head;
 
+  bool get isEmpty => head == null;
+
   void append(E data) {
     Node<E> newNode = Node(data);
     if (head == null) {
@@ -76,6 +72,30 @@ class LinkedList<E> {
         current = current?.next;
       }
       current?.next = newNode;
+    }
+  }
+
+  void remove(E data) {
+    if (isEmpty) {
+      return;
+    }
+
+    // If the head contains the data to be removed
+    while (head != null && head!.data == data) {
+      head = head!.next; // Move the head to the next node
+    }
+
+    // Use a variable to traverse the list
+    var current = head;
+
+    while (current?.next != null) {
+      // If the next node contains the data, skip it
+      if (current!.next!.data == data) {
+        current.next = current.next!.next;
+      } else {
+        // Otherwise, move to the next node
+        current = current.next;
+      }
     }
   }
 
@@ -97,6 +117,3 @@ void main() {
   print('Linked List Elements:');
   list.display();
 }
-
-
-
