@@ -43,15 +43,63 @@ void main() {
     });
   });
 
-  group('LinkedList Remove Tests', (){
-    test("Remove vaule from the list", (){
-      SinglyLinkedList<int> linkedList = SinglyLinkedList<int>();
-      linkedList.append(1);
-      linkedList.append(2);
-   
-       Node<int>? current = linkedList.head;
-      linkedList.remove(2);
-      expect(linkedList.remove(2), 1);
+
+
+
+  group('LinkedList remove method', () {
+    test('Remove from empty list', () {
+      final list = SinglyLinkedList<int>();
+      list.remove(5);
+      expect(list.toList(), []);
+    });
+
+    test('Remove head element', () {
+      final list = SinglyLinkedList<int>();
+      list.append(5);
+      list.append(10);
+      list.append(15);
+      list.remove(5);
+       expect(list.toList(), [10, 15]);
+    });
+
+    test('Remove middle element', () {
+      final list = SinglyLinkedList<int>();
+      list.append(5);
+      list.append(10);
+      list.append(15);
+      list.remove(10);
+      expect(list.toList(), [5, 15]);
+    });
+
+    test('Remove tail element', () {
+      final list = SinglyLinkedList<int>();
+      list.append(5);
+      list.append(10);
+      list.append(15);
+      list.remove(15);
+      expect(list.toList(), [5, 10]);
+    });
+
+    test('Remove multiple occurrences of the same element', () {
+      final list = SinglyLinkedList<int>();
+      list.append(5);
+      list.append(10);
+      list.append(5);
+      list.append(15);
+      list.append(5);
+      list.remove(5);
+      expect(list.toList(), [10, 15]);
+    });
+
+    test('Remove element not in the list', () {
+      final list = SinglyLinkedList<int>();
+      list.append(5);
+      list.append(10);
+      list.append(15);
+      list.remove(20);
+      expect(list.toList(), [5, 10, 15]);
     });
   });
+
+
 }

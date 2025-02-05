@@ -79,6 +79,16 @@ class SinglyLinkedList<E> {
       current = current.next;
     }
   }
+
+  List<E> toList() {
+    var result = <E>[];
+    var current = head;
+    while (current != null) {
+      result.add(current.data);
+      current = current.next;
+    }
+    return result;
+  }
 }
 
 void main() {
