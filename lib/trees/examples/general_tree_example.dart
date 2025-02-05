@@ -1,4 +1,4 @@
-import 'package:dsa/examples/employee.dart';
+import 'package:dsa/trees/examples/employee.dart';
 import 'package:dsa/trees/general_tree.dart';
 
 

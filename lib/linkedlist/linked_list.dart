@@ -21,34 +21,7 @@
 // Node Class
 //  Each Nodes store the data and reference for next node
 
-// class Node<E extends LinkedListEntry<E>> {
-//   T? data; // Data stored in the node
-//   Node<T>? next; // Pointing to the next node
 
-//   Node(this.data);
-// }
-
-// class LinkedList<T> {
-//   Node<T>? head; // Points the first node of the list
-
-//  // Add a Node end of the list
-//   void append(T data) {
-//     Node<T> newNode = Node(data);
-
-//     // ignore: prefer_conditional_assignment
-//     if (head == null) {
-//       head = newNode; // If the list is empty, make this the head
-//     } else {
-//       Node<T>? current = head;
-
-//       //Traverse to the end of list
-//       while (current?.next != null) {
-//         current = current?.next;
-//       }
-//       current?.next = newNode; // Add the new node at the end
-//     }
-//   }
-// }
 
 class Node<E> {
   E data;
@@ -57,7 +30,7 @@ class Node<E> {
   Node(this.data);
 }
 
-class LinkedList<E> {
+class SinglyLinkedList<E> {
   Node<E>? head;
 
   bool get isEmpty => head == null;
@@ -75,7 +48,7 @@ class LinkedList<E> {
     }
   }
 
-  void remove(E data) {
+   remove(E data) {
     if (isEmpty) {
       return;
     }
@@ -109,7 +82,7 @@ class LinkedList<E> {
 }
 
 void main() {
-  LinkedList<int> list = LinkedList<int>();
+  SinglyLinkedList<int> list = SinglyLinkedList<int>();
   list.append(10);
   list.append(20);
   list.append(30);
